@@ -24,7 +24,7 @@ author:
   # Biographic information
   avatar           : "avatar.jpg"
   name             : "Yingchu Sun"
-  pronouns         : "he/his" # example: "she/her"
+  pronouns         : #"he/his" # example: "she/her"
   bio              : "Ph.D. @ Rice University || Electrical and Computer Engineering"
   location         : "Houston,TX"
   employer         : "Rice University"
