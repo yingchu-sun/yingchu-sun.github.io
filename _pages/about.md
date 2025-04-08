@@ -1,4 +1,5 @@
 ---
+layout: archive
 permalink: /
 title: "Hello ! Welcome to my website ! "
 author_profile: true
