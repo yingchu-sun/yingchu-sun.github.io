@@ -11,16 +11,17 @@ redirect_from:
 
 Education
 ======
-* Ph.D in Version Control Theory, GitHub University, 2018 (expected)
-* M.S. in Jekyll, GitHub University, 2014
-* B.S. in GitHub, GitHub University, 2012
+* Ph.D in Electrical and Computer Engineering, Rice University , 2026 (expected)
+* M.S. in Electrical and Computer Engineering, Rice University , 2023
+* B.S. in Optoelectronic Information Science and Engineering, Zhejiang University , 2020
+* Minor: Advanced Class of Engineering Education, Chu Kochen Honors College (CKC) , 2020
 
 Work experience
 ======
-* Spring 2024: Academic Pages Collaborator
-  * GitHub University
+* Spring 2021 - Current: Research Assistant
+  * Rice University
   * Duties includes: Updates and improvements to template
-  * Supervisor: The Users
+  * Supervisor: Dr.Lan Luan and Dr.Chong Xie
 
 * Fall 2015: Research Assistant
   * GitHub University
@@ -46,19 +47,9 @@ Publications
   <ul>{% for post in site.publications reversed %}
     {% include archive-single-cv.html %}
   {% endfor %}</ul>
-  
-Talks
-======
-  <ul>{% for post in site.talks reversed %}
-    {% include archive-single-talk-cv.html  %}
-  {% endfor %}</ul>
-  
+
 Teaching
 ======
   <ul>{% for post in site.teaching reversed %}
     {% include archive-single-cv.html %}
   {% endfor %}</ul>
-  
-Service and leadership
-======
-* Currently signed in to 43 different slack teams
