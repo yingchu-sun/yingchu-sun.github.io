@@ -1,31 +1,30 @@
----
-layout: compress
----
+<!-- _layouts/default.html -->
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: 'en-US' }}">
+  {% include head.html %}
 
-{% include base_path %}
-
-<!doctype html>
-<html lang="{{ site.locale | slice: 0,2 }}" class="no-js">
-  <head>
-    {% include head.html %}
-    {% include head/custom.html %}
-  </head>
+  <!-- Intro styles (kept separate so you don't need SCSS) -->
+  <link rel="stylesheet" href="{{ '/assets/css/intro.css' | relative_url }}">
 
   <body>
+    <!-- Fullscreen intro overlay -->
+    {% include intro-hero.html %}
 
-    {% include browser-upgrade.html %}
-    {% include masthead.html %}
+    <!-- Main site content; initially hidden until user enters -->
+    <main id="site-content" class="site-content is-hidden" tabindex="-1">
+      {% include header.html %}
 
-    {{ content }}
+      <div class="page-content">
+        <div class="wrapper">
+          {{ content }}
+        </div>
+      </div>
 
-    <div class="page__footer">
-      <footer>
-        {% include footer/custom.html %}
-        {% include footer.html %}
-      </footer>
-    </div>
+      {% include footer.html %}
+      {% include scripts.html %}
+    </main>
 
-    {% include scripts.html %}
-
+    <!-- Intro behavior + reveal animations -->
+    <script defer src="{{ '/assets/js/intro.js' | relative_url }}"></script>
   </body>
 </html>
