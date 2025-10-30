@@ -5,40 +5,57 @@ layout: single
 classes: wide
 ---
 
-<!-- Inline styles so the page is self-contained -->
+<!-- Styling -->
 <style>
   .cv-embed {
     position: relative;
     width: 100%;
-    height: calc(100vh - 200px); /* leaves room for the theme header/footer */
-    max-height: 1200px;
-    margin: 1rem 0 2rem 0;
+    max-width: 100%;          /* full width */
+    height: calc(100vh - 180px); /* large, responsive height */
+    margin: 0 auto 1rem auto;
     border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.1);
   }
+
   .cv-embed iframe {
-    position: absolute; inset: 0;
-    width: 100%; height: 100%;
-    border: 0;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
   }
+
   .cv-actions {
-    display: flex; gap: 12px; flex-wrap: wrap; align-items: center;
-    margin-bottom: 0.75rem;
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-top: 1.5rem;
   }
+
   .btn {
     display: inline-block;
-    padding: 10px 14px;
+    padding: 10px 18px;
     border-radius: 10px;
-    border: 1px solid rgba(0,0,0,0.08);
+    border: 1px solid rgba(0,0,0,0.1);
     text-decoration: none;
+    background-color: #f8f9fa;
+    transition: all 0.2s ease;
+  }
+
+  .btn:hover {
+    background-color: #e9ecef;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  }
+
+  .note {
+    text-align: center;
+    font-size: 0.9em;
+    color: #666;
+    margin-top: 0.5rem;
   }
 </style>
-
-<div class="cv-actions">
-  <a class="btn" href="/files/Yingchu_Sun_CV.pdf" target="_blank" rel="noopener">Open in new tab</a>
-  <a class="btn" href="/files/Yingchu_Sun_CV.pdf" download>Download PDF</a>
-</div>
 
 <div class="cv-embed">
   <iframe
@@ -47,109 +64,9 @@ classes: wide
   </iframe>
 </div>
 
-<p><em>If the embedded viewer doesn’t load on your device, use the “Open in new tab” button above.</em></p>
+<div class="cv-actions">
+  <a class="btn" href="/files/Yingchu_Sun_CV.pdf" target="_blank" rel="noopener">Open in new tab</a>
+  <a class="btn" href="/files/Yingchu_Sun_CV.pdf" download>Download PDF</a>
+</div>
 
-[//]: # ()
-[//]: # ()
-[//]: # ()
-[//]: # (---)
-
-[//]: # (layout: archive)
-
-[//]: # (title: "CV")
-
-[//]: # (permalink: /cv/)
-
-[//]: # (author_profile: true)
-
-[//]: # (redirect_from:)
-
-[//]: # (  - /resume)
-
-[//]: # (---)
-
-[//]: # ()
-[//]: # ({% include base_path %})
-
-[//]: # ()
-[//]: # (Education)
-
-[//]: # (======)
-
-[//]: # (* Ph.D in Electrical and Computer Engineering, Rice University , 2026 &#40;expected&#41;)
-
-[//]: # (* M.S. in Electrical and Computer Engineering, Rice University , 2023)
-
-[//]: # (* B.S. in Optoelectronic Information Science and Engineering, Zhejiang University , 2020)
-
-[//]: # (* Minor: Advanced Class of Engineering Education, Chu Kochen Honors College &#40;CKC&#41; , 2020)
-
-[//]: # ()
-[//]: # (Work experience)
-
-[//]: # (======)
-
-[//]: # (* Spring 2021 - Current: Research Assistant)
-
-[//]: # (  * Rice University)
-
-[//]: # (  * Duties includes: Updates and improvements to template)
-
-[//]: # (  * Supervisor: Dr.Lan Luan and Dr.Chong Xie)
-
-[//]: # ()
-[//]: # (* Fall 2015: Research Assistant)
-
-[//]: # (  * GitHub University)
-
-[//]: # (  * Duties included: Merging pull requests)
-
-[//]: # (  * Supervisor: Professor Hub)
-
-[//]: # ()
-[//]: # (* Summer 2015: Research Assistant)
-
-[//]: # (  * GitHub University)
-
-[//]: # (  * Duties included: Tagging issues)
-
-[//]: # (  * Supervisor: Professor Git)
-
-[//]: # (  )
-[//]: # (Skills)
-
-[//]: # (======)
-
-[//]: # (* Skill 1)
-
-[//]: # (* Skill 2)
-
-[//]: # (  * Sub-skill 2.1)
-
-[//]: # (  * Sub-skill 2.2)
-
-[//]: # (  * Sub-skill 2.3)
-
-[//]: # (* Skill 3)
-
-[//]: # ()
-[//]: # (Publications)
-
-[//]: # (======)
-
-[//]: # (  <ul>{% for post in site.publications reversed %})
-
-[//]: # (    {% include archive-single-cv.html %})
-
-[//]: # (  {% endfor %}</ul>)
-
-[//]: # ()
-[//]: # (Teaching)
-
-[//]: # (======)
-
-[//]: # (  <ul>{% for post in site.teaching reversed %})
-
-[//]: # (    {% include archive-single-cv.html %})
-
-[//]: # (  {% endfor %}</ul>)
+<p class="note"><em>If the embedded viewer doesn’t load properly, use “Open in new tab”.</em></p>
