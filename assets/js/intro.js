@@ -3,10 +3,9 @@
   const intro = document.getElementById('intro-hero');
   const enter = document.getElementById('intro-enter');
   const content = document.getElementById('site-content');
-
   if (!intro || !enter || !content) return;
 
-  // Show once per browser session (change to localStorage for longer persistence)
+  // Show once per browser session (use localStorage for once-per-day, see note below)
   const KEY = 'introDismissed';
   if (sessionStorage.getItem(KEY)) {
     intro.style.display = 'none';
@@ -16,7 +15,7 @@
     return;
   }
 
-  // Desktop: reveal CTA on first pointer move; Mobile: CSS already shows it
+  // Desktop: reveal CTA on first pointer move
   let ctaShown = false;
   const showCTA = () => {
     if (ctaShown) return;
@@ -30,33 +29,22 @@
 
   // Dismiss overlay => fade out, show content
   const dismiss = () => {
-    try {
-      sessionStorage.setItem(KEY, String(Date.now()));
-    } catch (_) {}
-    const fade = intro.animate(
-      [{ opacity: 1 }, { opacity: 0 }],
-      { duration: 450, easing: 'ease' }
-    );
-    fade.addEventListener('finish', () => {
-      intro.style.display = 'none';
-      intro.setAttribute('aria-hidden', 'true');
-      content.setAttribute('aria-hidden', 'false');
-      content.focus({ preventScroll: true });
-    });
+    try { sessionStorage.setItem(KEY, String(Date.now())); } catch (_) {}
+    intro.animate([{ opacity: 1 }, { opacity: 0 }], { duration: 450, easing: 'ease' })
+         .addEventListener('finish', () => {
+           intro.style.display = 'none';
+           intro.setAttribute('aria-hidden', 'true');
+           content.setAttribute('aria-hidden', 'false');
+           content.focus({ preventScroll: true });
+         });
     content.classList.remove('is-hidden');
     content.classList.add('is-visible');
     enhanceScrolling();
   };
 
   enter.addEventListener('click', dismiss);
-  enter.addEventListener('keyup', (e) => {
-    if (e.key === 'Enter' || e.key === ' ') dismiss();
-  });
-
-  // Keyboard: Enter on overlay anywhere
-  intro.addEventListener('keyup', (e) => {
-    if (e.key === 'Enter') dismiss();
-  });
+  enter.addEventListener('keyup', (e) => { if (e.key === 'Enter' || e.key === ' ') dismiss(); });
+  intro.addEventListener('keyup', (e) => { if (e.key === 'Enter') dismiss(); });
 
   // Subtle parallax on desktop
   if (window.matchMedia('(pointer: fine)').matches) {
@@ -68,19 +56,16 @@
     });
   }
 
-  // Reveal-on-scroll class helper
+  // Optional: reveal-on-scroll
   function enhanceScrolling() {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((en) => {
-          if (en.isIntersecting) {
-            en.target.classList.add('is-revealed');
-            observer.unobserve(en.target);
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((en) => {
+        if (en.isIntersecting) {
+          en.target.classList.add('is-revealed');
+          observer.unobserve(en.target);
+        }
+      });
+    }, { threshold: 0.1 });
 
     document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
   }

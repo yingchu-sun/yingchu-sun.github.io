@@ -2,12 +2,13 @@
 <div id="intro-hero" class="intro-hero" role="dialog" aria-label="Intro overlay" aria-modal="true">
   <div
     class="intro-bg"
-    style="background-image:url('{{ site.hero_image | default: "/images/hero-visual-prosthesis.JPG" }}');"
+
+    style="background-image:url('{{ site.hero_image | default: '/images/hero-visual-prosthesis.jpg' }}');"
   ></div>
 
   <div class="intro-overlay">
     <h1 class="intro-title">
-      Yingchu Sun
+      {{ site.title | default: "Yingchu Sun" }}
       <span class="intro-sub">Neuroengineering • Visual Prosthesis • ML &amp; BCI</span>
     </h1>
 
