@@ -2,14 +2,12 @@
 layout: with-intro
 #layout: archive
 permalink: /
-title: "Hello ! Welcome to my website ! "
+title: "About Me "
 author_profile: true
 redirect_from: 
   - /about/
   - /about.html
 ---
-About me
-======
 
 I design computational and engineering systems that connect **neural activity** to **perception and behavior**.  
 My work combines **high-density BCI**, **multimodal imaging system**, and **machine learning models** to understand and restore visual/motor functions.

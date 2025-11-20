@@ -5,32 +5,138 @@ permalink: /publications/
 author_profile: true
 ---
 
-{% if site.author.googlescholar %}
-  <div class="wordwrap">You can also find my articles on <a href="{{https://scholar.google.com/citations?user=jjuzYucAAAAJ&hl=en&oi=ao}}">my Google Scholar profile</a>.</div>
-{% endif %}
+<div class="wordwrap">
+You can also find my articles on
+<a href="https://scholar.google.com/citations?user=jjuzYucAAAAJ&hl=en&oi=ao" target="_blank">Google Scholar</a>.
+</div>
 
-{% include base_path %}
+<br>
 
-<!-- New style rendering if publication categories are defined -->
-{% if site.publication_category %}
-  {% for category in site.publication_category  %}
-    {% assign title_shown = false %}
-    {% for post in site.publications reversed %}
-      {% if post.category != category[0] %}
-        {% continue %}
-      {% endif %}
-      {% unless title_shown %}
-        <h2>{{ category[1].title }}</h2><hr />
-        {% assign title_shown = true %}
-      {% endunless %}
-      {% include archive-single.html %}
-    {% endfor %}
-  {% endfor %}
-{% else %}
-  {% for post in site.publications reversed %}
-    {% include archive-single.html %}
-  {% endfor %}
-{% endif %}
+<style>
+.pub-block {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 20px;
+  margin-bottom: 32px;
+  padding: 18px;
+  border-radius: 12px;
+  background: #f9f9f9;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+}
 
+.pub-thumb {
+  flex-shrink: 0;
+  width: 140px;
+  height: 105px;
+  border-radius: 8px;
+  object-fit: cover;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
 
+.pub-info {
+  flex: 1;
+}
 
+.pub-title {
+  font-size: 1.15em;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.pub-authors {
+  font-size: 0.95em;
+  color: #555;
+  margin-bottom: 4px;
+}
+
+.pub-venue {
+  font-size: 0.9em;
+  font-style: italic;
+  color: #777;
+}
+
+</style>
+
+---
+
+# 🧪 Publications
+
+<!-- ----------- 1 ----------- -->
+<div class="pub-block">
+  <img src="/images/pub1.JPG" class="pub-thumb" alt="Paper 1 thumbnail">
+  <div class="pub-info">
+    <div class="pub-title">
+      [1] Stable Neural Dynamics Tracking in Freely Moving Mice During Motor Skill Learning via Ultra-flexible, High-density Electrodes.
+    </div>
+    <div class="pub-authors">
+      Sun, Y.*, Yin, R.*, Zolotavin, P., ... & Luan, L. (2025). <strong>(in preparation)</strong>
+    </div>
+    <div class="pub-venue">
+      <em>Understanding long-term dynamics during motor learning using ultraflexible electrodes</em>
+    </div>
+  </div>
+</div>
+
+<!-- ----------- 2 ----------- -->
+<div class="pub-block">
+  <img src="/images/pub2.JPG" class="pub-thumb" alt="Paper 2 thumbnail">
+  <div class="pub-info">
+    <div class="pub-title">
+      [2] Challenging Functional Remapping: Tracking Neural Activity Reveals Selective Potentiation in Stroke-Induced Neural Plasticity.
+    </div>
+    <div class="pub-authors">
+      Yin, R., Rathore, H., Sun, Y., ... & Luan, L. (2025). <strong>Cell Reports (in review)</strong>
+    </div>
+    <div class="pub-venue">
+      <em>Neural compensation mechanisms after stroke revealed through chronic recording.</em>
+    </div>
+  </div>
+</div>
+
+<!-- ----------- 3 ----------- -->
+<div class="pub-block">
+  <img src="/images/pub3.JPG" class="pub-thumb" alt="Paper 3 thumbnail">
+  <div class="pub-info">
+    <div class="pub-title">
+      [3] Longitudinal, Multimodal Tracking Reveals Lasting Neurovascular Impact of Individual Microinfarcts.
+    </div>
+    <div class="pub-authors">
+      Jin, Y., He, F., Rathore, H., Sun, Y., … & Luan, L. (2025). <strong>Advanced Science</strong>
+    </div>
+    <div class="pub-venue">
+      <em>A multimodal study showing persistent vascular and neuronal disruption after microinfarcts.</em>
+    </div>
+  </div>
+</div>
+
+<!-- ----------- 4 ----------- -->
+<div class="pub-block">
+  <img src="/images/pub4.JPG" class="pub-thumb" alt="Paper 4 thumbnail">
+  <div class="pub-info">
+    <div class="pub-title">
+      [4] Low-threshold, high-resolution, chronically stable intracortical microstimulation by ultraflexible electrodes.
+    </div>
+    <div class="pub-authors">
+      Lycke, R., Kim, R., Zolotavin, P., Sun, Y., ... & Luan, L. (2023). <strong>Cell Reports</strong>
+    </div>
+    <div class="pub-venue">
+      <em>Demonstrating gentle, stable ICMS using next-generation ultraflexible probes.</em>
+    </div>
+  </div>
+</div>
+
+<!-- ----------- 5 ----------- -->
+<div class="pub-block">
+  <img src="/images/pub5.JPG" class="pub-thumb" alt="Paper 5 thumbnail">
+  <div class="pub-info">
+    <div class="pub-title">
+      [5] Longitudinal neural and vascular recovery following ultraflexible neural electrode implantation in aged mice.
+    </div>
+    <div class="pub-authors">
+      He, F*., Sun, Y*., Jin, Y., Yin, R., Zhu, H., ... & Luan, L. (2022). <strong>Biomaterials</strong>
+    </div>
+    <div class="pub-venue">
+      <em>Chronic recovery study showing reduced inflammation & improved stability in aged mice.</em>
+    </div>
+  </div>
+</div>
