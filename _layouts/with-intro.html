@@ -1,35 +1,18 @@
 ---
-layout: none
+layout: default
 ---
-<!doctype html>
-<html lang="{{ site.lang | default: 'en' }}" class="no-js">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
 
-    {%- comment -%}
-    Load your site’s main stylesheet. For GitHub Pages with jekyll-theme-primer,
-    this resolves to /assets/css/style.css
-    {%- endcomment -%}
-    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}?v={{ site.github.build_revision | default: '' }}">
+{% comment %}
+This layout wraps your theme's default layout.
+It adds a fullscreen intro overlay and hides the main content until "Go to the website" is clicked.
+DO NOT include <html>, <head>, or <body> tags here — the theme already does that.
+{% endcomment %}
 
-    <!-- Our intro CSS -->
-    <link rel="stylesheet" href="{{ '/assets/css/intro.css' | relative_url }}?v={{ site.github.build_revision | default: '' }}">
+{% include intro-hero.html %}
 
-    {%- if site.title -%}<title>{{ site.title }}</title>{%- endif -%}
-  </head>
+<main id="site-content" class="site-content is-hidden" tabindex="-1">
+  {{ content }}
+</main>
 
-  <body>
-    {%- comment -%} Fullscreen intro overlay {%- endcomment -%}
-    {% include intro-hero.html %}
-
-    {%- comment -%} Main site content (hidden until user clicks) {%- endcomment -%}
-    <main id="site-content" class="site-content is-hidden" tabindex="-1">
-      {{ content }}
-    </main>
-
-    <!-- Optional: your theme’s JS if you have any -->
-    <script defer src="{{ '/assets/js/intro.js' | relative_url }}?v={{ site.github.build_revision | default: '' }}"></script>
-  </body>
-</html>
+<link rel="stylesheet" href="{{ '/assets/css/intro.css' | relative_url }}">
+<script defer src="{{ '/assets/js/intro.js' | relative_url }}"></script>

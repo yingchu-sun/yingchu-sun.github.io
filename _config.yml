@@ -353,3 +353,9 @@ compress_html:
     envs: development
 
 hero_image: /images/hero-visual-prosthesis.jpg
+
+#title: Yingchu Sun
+#theme: jekyll-theme-primer
+#
+## Optional hero image for intro
+#hero_image: /images/hero-visual-prosthesis.jpg

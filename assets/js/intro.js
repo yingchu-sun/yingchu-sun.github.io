@@ -5,48 +5,41 @@
   const content = document.getElementById('site-content');
   if (!intro || !enter || !content) return;
 
-  // Show once per browser session (use localStorage for once-per-day, see note below)
+  // Only show once per session
   const KEY = 'introDismissed';
   if (sessionStorage.getItem(KEY)) {
     intro.style.display = 'none';
     content.classList.remove('is-hidden');
     content.classList.add('is-visible');
-    enhanceScrolling();
+    revealSections();
     return;
   }
 
-  // Desktop: reveal CTA on first pointer move
-  let ctaShown = false;
+  // Show button after hover/touch
+  let shown = false;
   const showCTA = () => {
-    if (ctaShown) return;
-    ctaShown = true;
+    if (shown) return;
+    shown = true;
     intro.classList.add('show-cta');
-    window.removeEventListener('mousemove', showCTA);
-    window.removeEventListener('touchstart', showCTA);
   };
   window.addEventListener('mousemove', showCTA, { once: true });
   window.addEventListener('touchstart', showCTA, { once: true });
 
-  // Dismiss overlay => fade out, show content
+  // Click or keypress to enter
   const dismiss = () => {
     try { sessionStorage.setItem(KEY, String(Date.now())); } catch (_) {}
     intro.animate([{ opacity: 1 }, { opacity: 0 }], { duration: 450, easing: 'ease' })
-         .addEventListener('finish', () => {
-           intro.style.display = 'none';
-           intro.setAttribute('aria-hidden', 'true');
-           content.setAttribute('aria-hidden', 'false');
-           content.focus({ preventScroll: true });
-         });
+         .addEventListener('finish', () => { intro.style.display = 'none'; });
     content.classList.remove('is-hidden');
     content.classList.add('is-visible');
-    enhanceScrolling();
+    revealSections();
   };
 
   enter.addEventListener('click', dismiss);
   enter.addEventListener('keyup', (e) => { if (e.key === 'Enter' || e.key === ' ') dismiss(); });
   intro.addEventListener('keyup', (e) => { if (e.key === 'Enter') dismiss(); });
 
-  // Subtle parallax on desktop
+  // Parallax effect
   if (window.matchMedia('(pointer: fine)').matches) {
     const bg = intro.querySelector('.intro-bg');
     window.addEventListener('mousemove', (e) => {
@@ -56,8 +49,8 @@
     });
   }
 
-  // Optional: reveal-on-scroll
-  function enhanceScrolling() {
+  // Reveal on scroll
+  function revealSections() {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((en) => {
         if (en.isIntersecting) {
@@ -66,7 +59,6 @@
         }
       });
     }, { threshold: 0.1 });
-
     document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
   }
 })();
