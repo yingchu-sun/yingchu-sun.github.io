@@ -11,3 +11,9 @@ redirect_from:
 Description
 ======
 Our team at Rice University is dedicated to pushing the boundaries of computer vision and optical engineering, developing cutting-edge tools to explore neural dynamics in unprecedented detail. As a Graduate Research Assistant for over four years in Dr. Lan Luan's lab, I have focused on building precise hardware and software systems that enable real-time analysis of neural and behavioral data. My journey spans key experiences at Zhejiang University and Boston University, where I honed technical skills that now support our interdisciplinary efforts at Rice.
+
+<p align="center">
+  <img src="/images/hero-visual-prosthesis.JPG"
+       alt="Visual prosthesis concept"
+       style="max-width: 85%; border-radius: 12px; box-shadow: 0 4px 16px rgba(0,0,0,0.15);">
+</p>
