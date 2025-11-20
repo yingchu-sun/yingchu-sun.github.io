@@ -1,18 +1,18 @@
 ---
-layout: default
+layout: archive
 ---
 
 {% comment %}
-This layout wraps your theme's default layout.
-It adds a fullscreen intro overlay and hides the main content until "Go to the website" is clicked.
-DO NOT include <html>, <head>, or <body> tags here — the theme already does that.
+This layout wraps the "home" layout from AcademicPages.
+"home" layout already includes sidebar, masthead, page content, footer, etc.
+We inject the fullscreen intro BEFORE the normal content.
 {% endcomment %}
 
 {% include intro-hero.html %}
 
-<main id="site-content" class="site-content is-hidden" tabindex="-1">
+<div id="site-content" class="site-content is-hidden">
   {{ content }}
-</main>
+</div>
 
 <link rel="stylesheet" href="{{ '/assets/css/intro.css' | relative_url }}">
 <script defer src="{{ '/assets/js/intro.js' | relative_url }}"></script>
