@@ -1,12 +1,187 @@
 ---
 layout: archive
-title: "Teaching"
-permalink: /teaching/
+title: "Projects"
+permalink: /projects/
 author_profile: true
 ---
 
-{% include base_path %}
 
-{% for post in site.teaching reversed %}
-  {% include archive-single.html %}
-{% endfor %}
+<style>
+.pub-block {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 20px;
+  margin-bottom: 32px;
+  padding: 18px;
+  border-radius: 12px;
+  background: #f9f9f9;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+}
+
+.pub-thumb {
+  flex-shrink: 0;
+  width: 140px;
+  height: 105px;
+  border-radius: 8px;
+  object-fit: cover;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.pub-info {
+  flex: 1;
+}
+
+.pub-title {
+  font-size: 1.15em;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.pub-authors {
+  font-size: 0.95em;
+  color: #555;
+  margin-bottom: 4px;
+}
+
+.pub-venue {
+  font-size: 0.9em;
+  font-style: italic;
+  color: #777;
+  margin-bottom: 10px;
+}
+
+/* View button */
+.pub-btn {
+  display: inline-block;
+  padding: 8px 14px;
+  border-radius: 8px;
+  background: black;
+  color: white !important;
+  font-size: 0.9em;
+  text-decoration: none;
+  transition: background 0.25s ease;
+}
+
+.pub-btn:hover {
+  background: #333;
+}
+</style>
+
+
+
+<!-- ----------- 1 ----------- -->
+<div class="pub-block">
+  <img src="/images/Project1.png" class="pub-thumb" alt="Paper 1 thumbnail">
+  <div class="pub-info">
+    <div class="pub-title">
+      Bio-Inspired Visual Encoding and Perceptual Modeling from LGN Neural Dynamics
+    </div>
+    <div class="pub-authors">
+      <strong>Yingchu Sun</strong>
+    </div>
+    <div class="pub-venue">
+      <em>In this project, I recorded large-scale neural activity from the mouse lateral geniculate nucleus (LGN) using 128-channel ultraflexible probes, enabling stable capture of both visually evoked and electrically stimulated responses across sessions. To support high-fidelity analysis, I developed a Python-based artifact removal pipeline that eliminated stimulation-induced distortions and extracted clean single-unit activity using template-based clustering methods. Building on these data, I constructed computational encoding models—including Difference-of-Gaussians (DoG) receptive field filters and dynamic linear–nonlinear (LN) frameworks—to decode visual patterns from population responses and reconstruct perceived luminance and spatial contrast. Together, these tools form an end-to-end system that links LGN population activity to perceptual representations, providing a foundation for understanding and designing future visual prosthesis strategies.</em>
+    </div>
+  </div>
+</div>
+
+
+<!-- ----------- 2 ----------- -->
+<div class="pub-block">
+  <img src="/images/Project2.jpg" class="pub-thumb" alt="Paper 2 thumbnail">
+  <div class="pub-info">
+    <div class="pub-title">
+       High-speed Biophysical and Biochemical Monitoring to Discover Early Markers of Unconventional Brain Injury
+    </div>
+    <div class="pub-authors">
+      <strong>Yingchu Sun</strong>
+    </div>
+    <div class="pub-venue">
+      <em>Brain injury triggers a complex sequence of dynamic interactions between the initial insult and the brain’s conserved mechanisms of plasticity, remodeling, and compensation. Central to these processes are alterations in neurovascular activity, which simultaneously drive neuroinflammation and cell death while enabling pathways for recovery. To capture these multifaceted changes, we developed a multimodal platform that integrates two-photon microscopy, laser speckle contrast imaging, intrinsic optical imaging, and electrophysiology to monitor neurons, vasculature, glutamate dynamics, and cerebral blood flow across spatial scales. Using this system, we characterized long-term neurovascular remodeling following ultraflexible polymer electrode implantation—revealing rapid angiogenesis, layer-dependent vascular reorganization, and corresponding increases in neural activity—and identified acute biological responses to high-energy pulsed microwave radiation, including suppressed glutamate release, decreased local field potentials, and increased cerebral blood flow driven by thermal and thermoelastic mechanisms. In contrast, focused ultrasound stimulation did not induce measurable changes in glutamate, neural activity, or blood flow. Together, these findings map both rapid and long-term neurovascular adaptations to injury and stimulation, providing a foundation for developing future interventions aimed at improving neurovascular resilience and recovery.</em>
+    </div>
+    <a class="pub-btn" href="https://repository.rice.edu/items/69341da5-818e-4a54-9c1c-e5685e7b27a3" target="_blank">Check More</a>
+  </div>
+</div>
+
+
+<!-- ----------- 3 ----------- -->
+<div class="pub-block">
+  <img src="/images/Project3.jpg" class="pub-thumb" alt="Paper 3 thumbnail">
+  <div class="pub-info">
+    <div class="pub-title">
+      PET Image Reconstruction based on Deep Learning Methods
+    </div>
+    <div class="pub-authors">
+      <strong>Yingchu Sun</strong>
+    </div>
+    <div class="pub-venue">
+      <em>In this project, I developed a deep learning–based PET image reconstruction pipeline using an ISTA-Net architecture implemented in Python. By leveraging the model’s ability to learn iterative sparse optimization steps, the system produced PET images with substantially enhanced fidelity compared to conventional approaches. Quantitatively, the ISTA-Net reconstruction improved peak signal-to-noise ratio (PSNR) by 83.7% over the standard maximum likelihood expectation maximization (MLEM) method, demonstrating the effectiveness of deep neural optimization frameworks for accelerating and improving medical image reconstruction.</em>
+    </div>
+    <a class="pub-btn" href="https://github.com/jianzhangcs/ISTA-Net-PyTorch" target="_blank">Check More</a>
+  </div>
+</div>
+
+
+<!-- ----------- 4 ----------- -->
+<div class="pub-block">
+  <div class="pub-info">
+    <div class="pub-title">
+      Robotic Arm Control Through BCI
+    </div>
+    <div class="pub-authors">
+      <strong>Yingchu Sun</strong>
+    </div>
+    <div class="pub-venue">
+      <em> In this project, I developed an online single-neuron detection pipeline in MATLAB to decode neural activity from the mouse M2 cortex in real time. These extracted spike signals were used to control a robotic arm that dynamically adjusted the 2D position of food rewards based on each mouse’s neural output. By translating single-unit activity into closed-loop behavioral control, the system enabled mice to rapidly learn effective modulation strategies, increasing task success rates from 30% (chance level) to 80% within just three days across five animals. This work demonstrates the potential of precise, real-time neural decoding for intuitive brain–machine interface training and adaptive motor control.</em>
+    </div>
+  </div>
+</div>
+
+
+<!-- ----------- 5 ----------- -->
+<div class="pub-block">
+  <div class="pub-info">
+    <div class="pub-title">
+      Real Time Body Posture Detection
+    </div>
+    <div class="pub-authors">
+      <strong>Yingchu Sun</strong>
+    </div>
+    <div class="pub-venue">
+      <em>In this computer vision project, I trained a YOLO-v5 model within an OpenCV pipeline to perform real-time mouse body-posture and skeleton tracking. The system accurately identified key skeletal landmarks frame-by-frame, enabling fast and reliable behavioral analysis during experiments. Through model optimization and careful dataset curation, the tracker achieved an average positional error of <0.2 and an overall detection accuracy exceeding 95%, demonstrating its effectiveness for high-precision, real-time animal pose estimation.</em>
+    </div>
+
+  </div>
+</div>
+
+<!-- ----------- 6 ----------- -->
+<div class="pub-block">
+  <div class="pub-info">
+    <div class="pub-title">
+      Video Editing Detection
+    </div>
+    <div class="pub-authors">
+      <strong>Yingchu Sun</strong>
+    </div>
+    <div class="pub-venue">
+      <em>In this project, I developed a MATLAB-based algorithm to detect and segment video editing events by combining signal processing and perceptual hashing techniques. The pipeline performed frame splitting, compression, 2D-FFT transformation, and perceptual hash extraction, followed by similarity assessment using bit-error–rate comparisons between consecutive frames. This approach robustly identified temporal discontinuities and special-effect transitions, successfully segmenting a three-minute video containing 87 editing events across diverse visual effects.</em>
+    </div>
+
+  </div>
+</div>
+
+<!-- ----------- 7 ----------- -->
+<div class="pub-block">
+  <div class="pub-info">
+    <div class="pub-title">
+      Image classification and Image style transfer
+    </div>
+    <div class="pub-authors">
+      <strong>Yingchu Sun</strong>
+    </div>
+    <div class="pub-venue">
+      <em>In this artificial intelligence project, I trained and evaluated a VGG convolutional neural network in Caffe using the ImageNet dataset, achieving 88.0% accuracy across 1,000 object categories. Building on this foundation, I fine-tuned the model using a curated collection of Van Gogh paintings to learn artist-specific texture and color statistics, enabling high-quality neural style transfer onto arbitrary images. The combined pipeline demonstrated both strong large-scale image classification performance and compelling artistic style synthesis, showcasing the versatility of deep convolutional networks for visual understanding and generative creativity.</em>
+    </div>
+
+  </div>
+</div>
